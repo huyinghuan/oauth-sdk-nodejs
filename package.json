@@ -1,0 +1,13 @@
+{
+  "name": "oauth-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "github.com/huyinghuan/oauth-sdk-nodejs"
+  },
+  "author": "",
+  "license": "MIT"
+}
