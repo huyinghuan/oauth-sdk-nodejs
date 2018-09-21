@@ -21,4 +21,4 @@ new SDK(clientID, privateKey, oauthServer)
 
 ## Example
 
-示例见 https://github.com/huyinghuan/oauth-sdk-nodejs
+示例见 https://github.com/huyinghuan/oauth-sdk-nodejs/master/example.js
