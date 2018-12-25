@@ -60,7 +60,7 @@ class SDK {
             }, (response)=>{
                 let respBody = ""
                 if(response.statusCode != 200){
-                    return reject("Get Statsu code " + resp.StatusCode)
+                    return reject("Get Statsu code " + response.StatusCode)
                 }
                 response.on('data', (chunk)=> {
                     respBody = respBody+chunk

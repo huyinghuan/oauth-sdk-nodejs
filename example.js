@@ -4,7 +4,7 @@ const querystring = require('querystring')
 const SDK = require('./index.js')
 var mockSession = {}
 
-var sdk = new SDK("AVmIaHyqiaBXUCUTDtAQ5HTJ", "xlaNGbkLZifXPZH3DnTSQ3sh", "http://127.0.0.1:8000")
+var sdk = new SDK("jGZXZwCHSP5MCPLbuvlK3RRf", "SZd25NISWkGSlVYkCj4T56qR", "http://127.0.0.1:8000")
 
 http.createServer(async (request, response)=>{
 
@@ -15,6 +15,10 @@ http.createServer(async (request, response)=>{
    response.setHeader("Expires", "0")
 
    switch(rURL.pathname){
+    case "/favicon.ico":
+        response.statusCode = 404
+        response.end()
+        break
     case "/":
         if(mockSession.username){
             response.end(mockSession.username)
@@ -39,7 +43,7 @@ http.createServer(async (request, response)=>{
             return
         }
         let result =  await sdk.verify(rURL.pathname, request.method, mockSession.username)
-        console.log(result)
+        console.log(rURL.pathname, result)
         response.end(JSON.stringify(result))
    }
 
