@@ -59,13 +59,13 @@ class SDK {
                 }
             }, (response)=>{
                 let respBody = ""
-                if(response.statusCode != 200){
-                    return reject("Get Statsu code " + response.statusCode)
-                }
                 response.on('data', (chunk)=> {
                     respBody = respBody+chunk
                 });
                 response.on("end", ()=>{
+                    if(response.statusCode != 200){
+                        return reject(`Get Statsu code:${response.statusCode} msg: ${respBody}`)
+                    }
                     respBody = encrypt.decryptText(this.privateKey, respBody)
                     try{
                         respBody = JSON.parse(respBody)
@@ -77,6 +77,7 @@ class SDK {
                         reject(e)
                     }
                 })
+                
             })
             request.on("error", (e)=>{
                 reject(e)
