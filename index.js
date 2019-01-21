@@ -54,7 +54,7 @@ class SDK {
                 method: "POST",
                 headers: {
                     "Content-Length": Buffer.byteLength(body),
-                    "client_id": this.clientID,
+                    "client-id": this.clientID,
                     "account": username,
                 }
             }, (response)=>{
@@ -116,7 +116,7 @@ class SDK {
                 method: "POST",
                 headers: {
                     "Content-Length": Buffer.byteLength(scope),
-                    "client_id": this.clientID,
+                    "client-id": this.clientID,
                     "account": username,
                 }
             }, (response)=>{
